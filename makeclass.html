@@ -49,6 +49,9 @@
     </body>
     <script>
         var isGirl=[];
+        var isBoy=[];
+        var girlList=["김고라니", "박고라니", "정고라니", "백고라니", "흑고라니", "생고라니", "국산고라니", "왜래고라니"];
+        var boyList=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P"];
         function setGirl(lastNum){
             var i;
             var flag=0;
@@ -67,20 +70,23 @@
             }
             if(isGirl.length === 8){
                 var b=confirm('확정하시겠습니까?');
-                if(b==false){
+                if(b==0){
                     allGirlDelete();
-                }
-                else{
+                }else{
                     isGirl.push(undefined);
+                    isGirl.sort();
+                    randomGirl();
                 }
             }
         }
+        
         function upGirl(lastNum){
             var selected=document.getElementById('td'+lastNum);
             selected.style.backgroundColor = "hotpink";
             isGirl.push(Number(lastNum));
             console.log('pushed in isGirl ='+ lastNum);
         }
+        
         function downGirl(lastNum){
             var i, popNum;
             var selected=document.getElementById('td'+lastNum);
@@ -106,6 +112,45 @@
                 console.log('do pop.');
             }
         }
+        
+        function randomGirl(){
+            var i, name, rand;
+            for(i=0; i<girlList.length; i++){
+                while(1){
+                    rand=parseInt(Math.random()*8);
+                    if(girlList[rand] != undefined){
+                        name=girlList[rand];
+                        console.log('getout : ' + name);
+                        girlList[rand]=undefined;
+                        break;
+                    }
+                }
+                document.getElementById('td'+isGirl[i]).innerHTML=name;
+            }
+        }
+        function sortTheBoy(){
+            var i;
+            for(i=1; i<=24; i++){
+                isBoy.push(i);
+            }
+        }
+        
+        function randomBoy(){
+            var i, name, rand;
+            for(i=0; i<boyList.length; i++){
+                while(1){
+                    rand=parseInt(Math.random()*8);
+                    if(boyList[rand] != undefined){
+                        name=boyList[rand];
+                        console.log('getout : ' + name);
+                        boyList[rand]=undefined;
+                        break;
+                    }
+                }
+                document.getElementById('td'+isGirl[i]).innerHTML=name;
+            }
+        }
+            
         
     </script>
 </html>
