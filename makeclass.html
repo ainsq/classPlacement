@@ -8,44 +8,59 @@
                 border: 1px solid black;
                 width: 100px;
                 height: 40px;
+                text-align: center;
+                vertical-align: middle;
+                padding: 0px;
             }
+            
+            div{
+                width: 638px;
+                margin: auto;
+                margin-top: 50px;
+                text-align: center;
+            }
+            
         </style>
     </head>
     <body>
-        <table>
-            <tr>
-                <td id="td1" onclick="setGirl('1');"></td>
-                <td id="td2" onclick="setGirl('2');"></td>
-                <td id="td3" onclick="setGirl('3');"></td>
-                <td id="td4" onclick="setGirl('4');"></td>
-                <td id="td5" onclick="setGirl('5');"></td>
-                <td id="td6" onclick="setGirl('6');"></td>
-            </tr>
-            <tr>
-                <td id="td7" onclick="setGirl('7');"></td>
-                <td id="td8" onclick="setGirl('8');"></td>
-                <td id="td9" onclick="setGirl('9');"></td>
-                <td id="td10" onclick="setGirl('10');"></td>
-                <td id="td11" onclick="setGirl('11');"></td>
-                <td id="td12" onclick="setGirl('12');"></td>
-            </tr>
-            <tr>
-                <td id="td13" onclick="setGirl('13');"></td>
-                <td id="td14" onclick="setGirl('14');"></td>
-                <td id="td15" onclick="setGirl('15');"></td>
-                <td id="td16" onclick="setGirl('16');"></td>
-                <td id="td17" onclick="setGirl('17');"></td>
-                <td id="td18" onclick="setGirl('18');"></td>
-            </tr>
-            <tr>
-                <td id="td19" onclick="setGirl('19');"></td>
-                <td id="td20" onclick="setGirl('20');"></td>
-                <td id="td21" onclick="setGirl('21');"></td>
-                <td id="td22" onclick="setGirl('22');"></td>
-                <td id="td23" onclick="setGirl('23');"></td>
-                <td id="td24" onclick="setGirl('24');"></td>
-            </tr>
-        </table>
+        <div>
+            <h1>교탁</h1>
+            <table>
+                <tr>
+                    <td id="td1" onclick="setGirl('1');"></td>
+                    <td id="td2" onclick="setGirl('2');"></td>
+                    <td id="td3" onclick="setGirl('3');"></td>
+                    <td id="td4" onclick="setGirl('4');"></td>
+                    <td id="td5" onclick="setGirl('5');"></td>
+                    <td id="td6" onclick="setGirl('6');"></td>
+                </tr>
+                <tr>
+                    <td id="td7" onclick="setGirl('7');"></td>
+                    <td id="td8" onclick="setGirl('8');"></td>
+                    <td id="td9" onclick="setGirl('9');"></td>
+                    <td id="td10" onclick="setGirl('10');"></td>
+                    <td id="td11" onclick="setGirl('11');"></td>
+                    <td id="td12" onclick="setGirl('12');"></td>
+                </tr>
+                <tr>
+                    <td id="td13" onclick="setGirl('13');"></td>
+                    <td id="td14" onclick="setGirl('14');"></td>
+                    <td id="td15" onclick="setGirl('15');"></td>
+                    <td id="td16" onclick="setGirl('16');"></td>
+                    <td id="td17" onclick="setGirl('17');"></td>
+                    <td id="td18" onclick="setGirl('18');"></td>
+                </tr>
+                <tr>
+                    <td id="td19" onclick="setGirl('19');"></td>
+                    <td id="td20" onclick="setGirl('20');"></td>
+                    <td id="td21" onclick="setGirl('21');"></td>
+                    <td id="td22" onclick="setGirl('22');"></td>
+                    <td id="td23" onclick="setGirl('23');"></td>
+                    <td id="td24" onclick="setGirl('24');"></td>
+                </tr>
+            </table>
+            <button onclick="location.reload(true)">리셋</button>
+        </div>
     </body>
     <script>
         var isGirl=[];
@@ -146,6 +161,7 @@
                     }
                 }
                 document.getElementById('td'+isBoy[i]).innerHTML=name;
+                document.getElementById('td'+isBoy[i]).style.backgroundColor = "skyblue";
             }
         }
         
