@@ -66,13 +66,13 @@
             }else{
             }
             if(isGirl.length === 8){
-                var b=prompt('확정하시겠습니까?');
-                /*if(b==true){
-                }
-                else{
+                var b=confirm('확정하시겠습니까?');
+                if(b==false){
                     allGirlDelete();
                 }
-                */
+                else{
+                    isGirl.push(undefined);
+                }
             }
         }
         function upGirl(lastNum){
@@ -95,17 +95,17 @@
             console.log('realpop : '+isGirl[isGirl.length-1]);
             isGirl.pop();
         }
-        /*
+        
         function allGirlDelete(){
             var i;
             for(i=1; i<=24; i++){
-                document.getElementById('td'+String(i).style.backgroundColor="white");
+                document.getElementById('td'+String(i)).style.backgroundColor="white";
             }
             while(isGirl.length!=0){
                 isGirl.pop();
                 console.log('do pop.');
             }
         }
-        */
+        
     </script>
 </html>
