@@ -49,9 +49,9 @@
     </body>
     <script>
         var isGirl=[];
-        var flag=0;
         function setGirl(lastNum){
-            flag=0;
+            var i;
+            var flag=0;
             for(i=0; i<isGirl.length; i++){
                 if(Number(lastNum) === isGirl[i]){
                     flag=1;
@@ -67,11 +67,17 @@
             }
             if(isGirl.length === 8){
                 var b=prompt('확정하시겠습니까?');
+                /*if(b==true){
+                }
+                else{
+                    allGirlDelete();
+                }
+                */
             }
         }
         function upGirl(lastNum){
             var selected=document.getElementById('td'+lastNum);
-            selected.style.backgroundColor = "red";
+            selected.style.backgroundColor = "hotpink";
             isGirl.push(Number(lastNum));
             console.log('pushed in isGirl ='+ lastNum);
         }
@@ -89,6 +95,17 @@
             console.log('realpop : '+isGirl[isGirl.length-1]);
             isGirl.pop();
         }
-            
+        /*
+        function allGirlDelete(){
+            var i;
+            for(i=1; i<=24; i++){
+                document.getElementById('td'+String(i).style.backgroundColor="white");
+            }
+            while(isGirl.length!=0){
+                isGirl.pop();
+                console.log('do pop.');
+            }
+        }
+        */
     </script>
 </html>
